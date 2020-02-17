@@ -23,7 +23,7 @@ rank = comm.Get_rank()
 size = comm.Get_size()
 
 slice_size = 1000000
-total_slices = 50
+total_slices = 250
 
 # This is the master node.
 if rank == 0:
