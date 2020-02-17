@@ -24,7 +24,7 @@ for candidate_number in range(start_number,
                               end_number, cluster_size * 2):
 
     # Log progress in steps
-    # print(candidate_number)
+    print(candidate_number)
 
     # Assume this number is prime
     found_prime = True
@@ -59,4 +59,4 @@ if my_rank == 0:
     merged_primes.sort()
     print('Primes discovered: ' + str(len(merged_primes)))
     # Uncomment the next line to see all the prime numbers
-    # print(merged_primes)
+    print(merged_primes)
