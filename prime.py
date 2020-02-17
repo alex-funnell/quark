@@ -38,7 +38,7 @@ for candidate_number in range(start_number,
     # If we get here, nothing divided, so it's a prime number
     if found_prime:
         # Uncomment the next line to see the primes as they are found (slower)
-        print('Node ' + str(my_rank) + ' found ' + str(candidate_number))
+        #print('Node ' + str(my_rank) + ' found ' + str(candidate_number))
         primes.append(candidate_number)
 
 # Once complete, send results to the governing node
@@ -59,4 +59,4 @@ if my_rank == 0:
     merged_primes.sort()
     print('Primes discovered: ' + str(len(merged_primes)))
     # Uncomment the next line to see all the prime numbers
-    print('Primes found:\n'+merged_primes)
+    print('Primes found:\n'+str(merged_primes))
