@@ -8,7 +8,7 @@ This was written as the first milestone test for my Quark. It enables me to then
 - sys
 
 # How prime.py works
-The following steps show how the method of working the prime numbers out works, not Quark. The concepts of parallel computing and how details of how Quark works are available (here)[/README.md]. 
+The following steps show how the method of working the prime numbers out works, not Quark. The concepts of parallel computing and how details of how Quark works are available [here](/README.md). 
 
 1.	prime.py works out its rank in the Quark cluster and works out which part of the range of numbers or candidates it needs to check for prime numbers.
 2.	for loop goes through range of candidates...
