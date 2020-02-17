@@ -31,12 +31,12 @@ if rank == 0:
     slice = 0
     process = 1
 
-    print size
+    print(size)
 
     # Send the first batch of processes to the nodes.
     while process < size and slice < total_slices:
         comm.send(slice, dest=process, tag=1)
-        print "Sending slice",slice,"to process",process
+        print("Sending slice",slice,"to process",process)
         slice += 1
         process += 1
 
@@ -45,19 +45,19 @@ if rank == 0:
     while received_processes < total_slices:
         pi += comm.recv(source=MPI.ANY_SOURCE, tag=1)
         process = comm.recv(source=MPI.ANY_SOURCE, tag=2)
-        print "Recieved data from process", process
+        print("Recieved data from process", process)
         received_processes += 1
 
         if slice < total_slices:
             comm.send(slice, dest=process, tag=1)
-            print "Sending slice",slice,"to process",process
+            print("Sending slice",slice,"to process",process)
             slice += 1
 
     # Send the shutdown signal
     for process in range(1,size):
         comm.send(-1, dest=process, tag=1)
 
-    print "Pi is ", 4.0 * pi
+    print("Pi is ", 4.0 * pi)
 
 # These are the slave nodes, where rank > 0. They do the real work
 else:
