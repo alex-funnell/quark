@@ -58,4 +58,5 @@ if rank == 0:
     merged_primes.sort()
     print('Primes discovered: ' + str(len(merged_primes)))
     # Uncomment the next line to see all the prime numbers
+    print('Primes found:')
     print(merged_primes)
