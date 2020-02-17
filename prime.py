@@ -8,7 +8,7 @@ rank = comms.Get_rank()
 cluster_size = comms.Get_size()
 
 # Number to start on, based on the node's rank
-start = (rank * 2) + 1
+start = int((rank * 2) + 1)
 
 # When to stop
 end = int(sys.argv[1])
