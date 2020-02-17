@@ -1,6 +1,7 @@
 from mpi4py import MPI
 import time
 import sys
+from tqdm import tqdm
 
 # Attach to the cluster and find out who I am and how big it is
 comm = MPI.COMM_WORLD
@@ -20,8 +21,7 @@ start = time.time()
 primes = []
 
 # Loop through the numbers using rank number to divide the work
-for candidate_number in range(start_number,
-                              end_number, cluster_size * 2):
+for candidate_number in tqdm(range(start_number,end_number, cluster_size * 2)):
 
     # Log progress in steps
     #print(candidate_number)
