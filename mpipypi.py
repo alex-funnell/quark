@@ -22,7 +22,7 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 
-slice_size = 1000000
+slice_size = 1000000000
 total_slices = 250
 
 # This is the master node.
