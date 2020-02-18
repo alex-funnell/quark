@@ -1,10 +1,18 @@
 import git
+from mpi4py import MPI
+import time
+import sys
 
 comm = MPI.COMM_WORLD
 my_rank = comm.Get_rank()
-cluster_size = comm.Get_size()
 
 repo = git.Repo('/')
 o = repo.remotes.origin
 o.pull()
-print('Updated repo')
+
+if my_rank == 0: controller = True
+
+if controller:
+    print('Updated repo on controller 0')
+else:
+    print('Updated repo on node',str(my_rank))
