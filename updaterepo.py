@@ -10,7 +10,8 @@ repo = git.Repo('/home/user/cluster')
 o = repo.remotes.origin
 o.pull()
 
-if my_rank == 0: controller = True
+if my_rank == 0: 
+    controller = True
 
 if controller:
     print('Updated repo on controller 0')
