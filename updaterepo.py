@@ -5,6 +5,7 @@ import sys
 
 comm = MPI.COMM_WORLD
 my_rank = comm.Get_rank()
+controller = False
 
 repo = git.Repo('/home/user/cluster')
 o = repo.remotes.origin
