@@ -107,6 +107,20 @@ as needed. The command hostname just echoes the node’s name, so if all is well
 ### Is a cluster of one still a cluster?
 Now we’ve confirmed the cluster is operational, let’s put it to work. The prime.py program is a simple task that identifies prime numbers. The code takes a single argument, the maximum number to reach before stopping, and will return how many prime numbers were identified during the run. Start by testing it on the master node:
 ```sh
-mpiexec -n 1 python3 quark/prime.py 1000
+mpiexec -n 1 python3 prime.py 1000
 ```
 **Translation:** ‘Run a single instance on the local node that runs prime.py testing for prime numbers up to 1000.’ This should run pretty quickly, probably well under a second, and find 168 primes.
+
+### Compute!
+To start the supercomputer, run this command from the controller:
+```sh
+mpiexec -n 4 --host <INSERT CONTROLLER IP>,<INSERT WORKER1 IP> python3 prime.py 100000
+```
+
+Each node gets a ‘rank’: a unique ID. The controller is always 0. This is used in the script to allocate which range of numbers each node processes, so no node checks the same number if it is a prime. When complete, each node reports back to the controller detailing the primes found. This is known as ‘gathering’. Once complete, the controller pulls all the data together and reports the result. In more advanced applications, different data sets can be allocated to the nodes by the controller. This is called **scattering**.
+
+## Conclusion
+
+You may have noticed we asked for all the primes up to 1000 in the previous example. This isn’t a great test as it is so quick to complete. 100,000 takes a little longer. In our tests, we saw that a single node took 238.35 seconds, but a fournode cluster managed it in 49.58 seconds – nearly five times faster!
+
+Cluster computing isn’t just about crunching numbers. Fault-tolerance and load-balancing are other concepts worth investigating. Some cluster types act as single web servers and keep working, even if you kill one.
