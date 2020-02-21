@@ -16,12 +16,15 @@ A computer in a cluster is known as a **node** whether it is a controller or wor
 
 Tasks are distributed evenly across the nodes so that they can be ran with multiple processors. Tasks also have to be written and designed in a certain way that uses the cluster. 
 
-Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the operating system, use [Python](https://www.python.org) as the high-level language that we will write the task in. 
+Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the operating system and use [Python](https://www.python.org) as the high-level language that we will write the tasks in. 
 
 ## Visualisation of cluster computing
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+
+## Building a cluster with Raspberry Pis or other SBCs
+
+## Building a simulated cluster
 
 # Contribute
 
