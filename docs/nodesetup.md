@@ -67,3 +67,7 @@ Each node gets a ‘rank’: a unique ID. The controller is always 0. This is us
 You may have noticed we asked for all the primes up to 1000 in the previous example. This isn’t a great test as it is so quick to complete. 100,000 takes a little longer. In our tests, we saw that a single node took 238.35 seconds, but a fournode cluster managed it in 49.58 seconds – nearly five times faster!
 
 Cluster computing isn’t just about crunching numbers. Fault-tolerance and load-balancing are other concepts worth investigating. Some cluster types act as single web servers and keep working, even if you kill one.
+
+# What's next?
+
+Now we can take a look at [calculating pi in parallel](https://dev.azure.com/uncast/Quark/_git/quark?path=%2FREADME.md&version=GBmaster&_a=preview&anchor=calculating-pi-in-parallel).
