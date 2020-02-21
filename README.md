@@ -24,6 +24,8 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 
 ## Building a cluster with Raspberry Pi 4s
 
+**Note:** If you have a cluster already setup with Ubuntu Server 18.04.4 LTS or later and an active internet connection, you can skip to [node setup](/docs/nodesetup.md).
+
 ### You'll need
 - 2x [Raspberry Pi 4s](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
 - A [cluster case](https://www.amazon.co.uk/gp/product/B07TLSVTQP/)
