@@ -14,7 +14,7 @@ A cluster of Raspberry Pis can start with as little as two and grow into hundred
 
 We start here by assembling our Raspberry Pi 4B computers into a four-berth chassis. Many different configurations are available, including fan cooling. These guides work with other Raspberry Pis as well.
 
-![Image of Switch](docs/img/switch.jpg)
+![Image of Switch](img/switch.jpg)
 > A dedicated inexpensive switch will speed up communications. Raspberry Pi 4 computers can take advantage of full-bandwidth Gigabit Ethernet
 
 Consider the power requirements for your cluster. With our four nodes it’s not going to be ideal to have four PSUs driving them. As well as being ugly, it’s inefficient. Instead, track down a good-quality, powerful multi-port USB charger that is capable of powering your chosen number of computers. Then all you need are the cables to link them and you’re using a single mains socket. USB units are available that can handle eight Raspberry Pi computers without breaking a sweat. Do be careful of the higher demands of Raspberry Pi 4. 
