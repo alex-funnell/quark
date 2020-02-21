@@ -107,6 +107,6 @@ as needed. The command hostname just echoes the node’s name, so if all is well
 ### Is a cluster of one still a cluster?
 Now we’ve confirmed the cluster is operational, let’s put it to work. The prime.py program is a simple task that identifies prime numbers. The code takes a single argument, the maximum number to reach before stopping, and will return how many prime numbers were identified during the run. Start by testing it on the master node:
 ```sh
-mpiexec -n 1 python3 prime.py 1000
+mpiexec -n 1 python3 quark/prime.py 1000
 ```
 **Translation:** ‘Run a single instance on the local node that runs prime.py testing for prime numbers up to 1000.’ This should run pretty quickly, probably well under a second, and find 168 primes.
