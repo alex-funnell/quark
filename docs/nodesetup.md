@@ -2,6 +2,12 @@ The following steps need to be carried out on **all nodes**.
 
 On each node, run the following:
 ```sh
+git clone https://dev.azure.com/Uncast/Quark/_git/quark
+```
+This will clone the code in this repository straight into your nodes. 
+
+On each node, run the following:
+```sh
 sudo apt -y update && sudo apt -y upgrade && sudo reboot
 ```
 This will check for any updates, upgrade all packages on the system, then reboot to further install any packages.
