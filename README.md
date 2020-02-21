@@ -7,6 +7,19 @@ Although the main objective is above, Quark also will be here for other students
 
 # Concepts
 
+## How cluster computing works
+Cluster computing is a type of computing in which a group of computers are linked together so that they can act like a single computer.
+
+There are **two** types of computers in a cluster. A *controller*, which distributes the tasks and controlls the cluster and *workers*, which do what they say on the tin, carry out the task.
+Controllers are sometimes called master nodes or governing nodes. 
+A computer in a cluster is known as a **node** whether it is a controller or worker.
+
+Tasks are distributed evenly across the nodes so that they can be ran with multiple processors. Tasks also have to be written and designed in a certain way that uses the cluster. 
+
+Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the operating system, use [Python](https://www.python.org) as the high-level language that we will write the task in. 
+
+## Visualisation of cluster computing
+
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 
 
