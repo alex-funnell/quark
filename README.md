@@ -49,7 +49,7 @@ A cluster works by communication. A controller node is in charge of the cluster 
 
 ## Building a simulated cluster
 
-So you don't have multiple pis lying around. That's fine, we can virtualise a cluster with Virtual Machines. 
+So you don't have multiple RPis lying around. That's fine, we can virtualise a cluster with Virtual Machines. 
 
 A virtual machine is a file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. Multiple virtual machines can run simultaneously on the same physical computer.
 
