@@ -20,6 +20,8 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 
 ## Visualisation of cluster computing
 
+# Calculating Pi in parallel
+
 # Build and Test
 
 ## Building a cluster with Raspberry Pi 4s
