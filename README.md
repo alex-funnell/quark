@@ -1,5 +1,5 @@
 # Introduction to Quark
-Quark is a cluster computing flow. 'Flow' meaning that it describes how to use cluster computing with Python, and the concepts behind it.
+Quark is the name of this project. It's a cluster computing flow meaning that it describes how to get started and use cluster computing, and explains some of the the concepts behind it.
 
 **Objective:** Use multiple ARM-based computers to calculate pi in parallel to the highest amount of digits in 60 minutes.
 
