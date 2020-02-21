@@ -75,11 +75,6 @@ Now we need to get our virtual cluster set up with Quark.
 1) Start both the *simpy-controller* and *simpy-worker1* machines. Log into both with the username and password you created.
 The following steps need to be done on both nodes.
 2) In the menu bar, go to **Devices > Network > Network Settings** and select from the dropdown **Bridged Adapter**. 
-3) Type in the console: 
-```sh
-git clone https://dev.azure.com/Uncast/Quark/_git/quark
-```
-4) This will clone the code in this repository straight into your nodes. You're ready to move on!
 
 ### Setting up each node
 
