@@ -45,8 +45,7 @@ Time for our first cluster operation. From *simpy-controller*, issue the followi
 ```sh
 mpiexec -n 2 --host <INSERT CONTROLLER IP>,<INSERT WORKER1 IP> hostname
 ```
-We’re asking the master supervisor process, **mpiexec**, to start two processes (-n 2), one on each node. If you’re not using two hosts, you’ll need to change this
-as needed. The command hostname just echoes the node’s name, so if all is well, you’ll get a list of the two nodes of the cluster. You’ve just done a bit of parallel computing!
+We’re asking the master supervisor process, *mpiexec*, to start two processes (*-n 2*), one on each node. If you’re not using two hosts, you’ll need to change this as needed. The command *hostname* just echoes the node’s name, so if all is well, you’ll get a list of the two nodes of the cluster. 
 
 ### Is a cluster of one still a cluster?
 Now we’ve confirmed the cluster is operational, let’s put it to work. The prime.py program is a simple task that identifies prime numbers. The code takes a single argument, the maximum number to reach before stopping, and will return how many prime numbers were identified during the run. Start by testing it on the master node:
