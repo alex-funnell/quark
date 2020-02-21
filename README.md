@@ -44,7 +44,7 @@ Consider the power requirements for your cluster. With our four nodes it’s not
 A cluster works by communication. A controller node is in charge of the cluster and the workers are told what to do and to report back the results on demand. To achieve this we’re using wired Ethernet on a dedicated network. It’s not essential to do it this way, but for data-intensive applications it’s advisable for the cluster to have its own private link-up so it can exchange instructions without being hampered by wireless LAN or other network traffic.
 
 ### Getting setup
-1) For each node, burn [Ubuntu Server](https://ubuntu.com/download/server) to a microSD card.
+1) For each node, burn [Ubuntu Server 18.04.4 LTS](https://ubuntu.com/download/server) to a microSD card.
 2) To setup each node, follow [these instructions](/docs/nodesetup.md).
 
 ## Building a simulated cluster
