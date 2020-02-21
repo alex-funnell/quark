@@ -1,7 +1,7 @@
 # Introduction to Quark
 Quark is a cluster computing flow. 'Flow' meaning that it describes how to use cluster computing with Python, and the concepts behind it.
 
-Objective: Use multiple ARM-based computers to calculate pi in parallel to the highest amount of digits in 60 minutes.
+**Objective:** Use multiple ARM-based computers to calculate pi in parallel to the highest amount of digits in 60 minutes.
 
 Although the main objective is above, Quark also will be here for other students or users to learn and use parallel computing.
 
