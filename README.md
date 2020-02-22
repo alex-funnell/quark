@@ -23,6 +23,7 @@ Tasks are distributed evenly across the nodes so that they can be ran with multi
 Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the operating system and use [Python](https://www.python.org) as the high-level language that we will write the tasks in. 
 
 ## Visualisation of cluster computing
+![cluster](https://www.buzzle.com/images/diagrams/computer-networks/cluster-computing.jpg)
 ## Terms that we'll use and what they mean
 
 | Term:          | Definition                                                                                                                                                                                                                                                                                                                                                                                                               |
