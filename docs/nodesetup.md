@@ -2,12 +2,6 @@ The following steps need to be carried out on **all nodes**.
 
 On each node, run the following:
 ```sh
-git clone https://dev.azure.com/Uncast/Quark/_git/quark
-```
-This will clone the code in this repository straight into your nodes. 
-
-On each node, run the following:
-```sh
 sudo apt -y update && sudo apt -y upgrade && sudo reboot
 ```
 This will check for any updates, upgrade all packages on the system, then reboot to further install any packages.
@@ -47,17 +41,23 @@ mpiexec -n 2 --host <INSERT CONTROLLER IP>,<INSERT WORKER1 IP> hostname
 ```
 We’re asking the master supervisor process, *mpiexec*, to start two processes (*-n 2*), one on each node. If you’re not using two hosts, you’ll need to change this as needed. The command *hostname* just echoes the node’s name, so if all is well, you’ll get a list of the two nodes of the cluster. 
 
+On each node, run the following:
+```sh
+git clone https://dev.azure.com/Uncast/Quark/_git/quark
+```
+This will clone the example tasks in this repository straight into your nodes. 
+
 ### Is a cluster of one still a cluster?
 Now we’ve confirmed the cluster is operational, let’s put it to work. The prime.py program is a simple task that identifies prime numbers. The code takes a single argument, the maximum number to reach before stopping, and will return how many prime numbers were identified during the run. Start by testing it on the master node:
 ```sh
-mpiexec -n 1 python3 quark/prime.py 1000
+mpiexec -n 1 python3 quark/tasks/primeNo.py 1000
 ```
 **Translation:** ‘Run a single instance on the local node that runs prime.py testing for prime numbers up to 1000.’ This should run pretty quickly, probably well under a second, and find 168 primes.
 
 ### Compute!
 To start the supercomputer, run this command from the controller:
 ```sh
-mpiexec -n 4 --host <INSERT CONTROLLER IP>,<INSERT WORKER1 IP> python3 quark/prime.py 100000
+mpiexec -n 4 --host <INSERT CONTROLLER IP>,<INSERT WORKER1 IP> python3 quark/tasks/primeNo.py 100000
 ```
 
 Each node gets a ‘rank’: a unique ID. The controller is always 0. This is used in the script to allocate which range of numbers each node processes, so no node checks the same number if it is a prime. When complete, each node reports back to the controller detailing the primes found. This is known as ‘gathering’. Once complete, the controller pulls all the data together and reports the result. In more advanced applications, different data sets can be allocated to the nodes by the controller. This is called **scattering**.
