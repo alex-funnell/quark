@@ -7,10 +7,14 @@ Although the main objective is above, Quark also will be here for other students
 
 # Concepts
 
-## How cluster computing works
-Cluster computing is a type of computing in which a group of computers are linked together so that they can act like a single computer.
+## Introduction to cluster computing
+Cluster computing is a type of computing in which a group of computers are linked together so that they can act like a single computer. 
 
-There are **two** types of computers in a cluster. A *controller*, which distributes the tasks and controlls the cluster and *workers*, which do what they say on the tin, carry out the task.
+In its most basic form, a cluster is a system comprising two or more computers or systems (called nodes) which work together to execute applications or perform other tasks, so that users who use them, have the impression that only a single system responds to them, thus creating an illusion of a single resource (virtual machine). This concept is called transparency of the system. As key features for the construction of these platforms is included elevation : reliability, load balancing and performance.
+
+## How cluster computing works
+
+There are **two** types of nodes in a cluster. A *controller*, which distributes the tasks and controlls the cluster and *workers*, which do what they say on the tin, carry out the task.
 Controllers are sometimes called master nodes or governing nodes. 
 A computer in a cluster is known as a **node** whether it is a controller or worker.
 
@@ -19,6 +23,14 @@ Tasks are distributed evenly across the nodes so that they can be ran with multi
 Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the operating system and use [Python](https://www.python.org) as the high-level language that we will write the tasks in. 
 
 ## Visualisation of cluster computing
+## Terms that we'll use and what they mean
+
+### More information about cluster computing is [available here](docs/cluster-indepth.md)
+
+# Build and Test
+
+- [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
+- [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
 
 # Calculating primes in parallel
 
@@ -56,10 +68,3 @@ To make things worse, the currently known digit-extraction algorithms for bases 
 
 **TL:DR**
 That's not how it works. Computing the digits of Pi is like building a skyscraper. You cannot just assign different floors to different contractors to build at the same time and combine them at the end. You need to finish each floor before you can build the floor above it. The only way to parallelize is to have the different contractors work together within each floor. In other words, the parallelism is horizontal, not vertical.
-
-
-
-# Build and Test
-
-- [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
-- [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
