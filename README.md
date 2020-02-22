@@ -43,6 +43,22 @@ The following steps show how the method of working the prime numbers out works, 
 
 # Calculating Pi in parallel
 
+## Why can't you use parallel computing to calculate pi?
+
+Computing all the digits of Pi from 1 to N in an efficient manner is a coarse-grained parallelizable task. At the very top level, it is not parallelizable at all. All the parallelism is at the lower levels. Therefore, communication between all workers is very frequent - enough to become a bottleneck.
+
+There exist algorithms like BBP to directly compute arbitrary binary digits without the memory cost of computing all the digits before it. These are called "digit-extraction" algorithms. However, these algorithms require roughly O(N*log(N)) time to compute a small number of digits at offset N. Using this approach to compute all the digits from 1 to N will result in a quadratic run-time algorithm. This alone makes it unsuitable for large N.*
+
+To make things worse, the currently known digit-extraction algorithms for bases other than binary are much slower. And a radix conversion runs into the same all-to-all communication problem as the current methods to compute Pi.
+
+*While there exists some potential ways that can make the algorithm sub-quadratic, they haven't been researched since because they don't solve the problem of the radix conversion.
+
+
+**TL:DR**
+That's not how it works. Computing the digits of Pi is like building a skyscraper. You cannot just assign different floors to different contractors to build at the same time and combine them at the end. You need to finish each floor before you can build the floor above it. The only way to parallelize is to have the different contractors work together within each floor. In other words, the parallelism is horizontal, not vertical.
+
+
+
 # Build and Test
 
 - [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
