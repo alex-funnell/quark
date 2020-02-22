@@ -7,8 +7,8 @@
 - A [cluster case](https://www.amazon.co.uk/gp/product/B07TLSVTQP/)
 - An [ethernet switch](https://www.amazon.co.uk/NETGEAR-Gigabit-Ethernet-Unmanaged-GS105UK/dp/B0000E5SEQ)
 - [Multi-port USB PSU](https://www.anker.com/uk/products/variant/powerport-5/A2124211)
-- 4x [USB-C Cables](https://www.amazon.co.uk/gp/product/B07PPM7HLR/)
-- 4x [Gigabit Ethernet Cables](https://shop.pimoroni.com/products/cat5e-utp-ethernet-cable?variant=2664981953)
+- 2x [USB-C Cables](https://www.amazon.co.uk/gp/product/B07PPM7HLR/)
+- 2x [Gigabit Ethernet Cables](https://shop.pimoroni.com/products/cat5e-utp-ethernet-cable?variant=2664981953)
 
 A cluster of Raspberry Pis can start with as little as two and grow into hundreds. We'll use a modest two though in this example Each one, known as a ‘node’, will carry out part of our task for us and they all work in parallel to produce the result a lot quicker than a single node ever could. Some nice ‘cluster cases’ are available. 
 
