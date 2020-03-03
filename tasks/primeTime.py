@@ -1,3 +1,14 @@
+#-------------------------------------------------------------------------------
+# Name:        primeTime.py
+# Purpose:      How many primes in hour
+#
+# Author:      vulcno
+#
+# Created:     03/03/2020
+# Copyright:   (c) Uncast Labs 2020
+# Licence:     All rights reserved.
+#-------------------------------------------------------------------------------
+
 from mpi4py import MPI
 import time
 import sys
@@ -15,16 +26,18 @@ start_number = (my_rank * 2) + 1
 end_number = int(sys.argv[1])
 
 # Make a note of the start time
-start = time.time()
+startTime = time.time()
 
 # List of discovered primes for this node
 primes = []
 
-# Loop through the numbers using rank number to divide the work
-for candidate_number in range(start_number,end_number, cluster_size * 2):
+duration = 5
+endTime = startTime + duration
+validTime = True
 
-    # Log progress in steps
-    #print(candidate_number)
+while validTime:
+
+    candidate_number = my_rank + 1
 
     # Assume this number is prime
     found_prime = True
@@ -40,6 +53,12 @@ for candidate_number in range(start_number,end_number, cluster_size * 2):
         # Uncomment the next line to see the primes as they are found (slower)
         #print('Node ' + str(my_rank) + ' found ' + str(candidate_number))
         primes.append(candidate_number)
+
+    candidate_number += cluster_size
+
+    if currentTime == endTime or currentTime > endTime and validTime:
+        break
+
 
 # Once complete, send results to the governing node
 results = comm.gather(primes, root=0)
@@ -57,6 +76,9 @@ if my_rank == 0:
     # Each process returned an array, so lets merge them
     merged_primes = [item for sublist in results for item in sublist]
     merged_primes.sort()
+
     print('Primes discovered: ' + str(len(merged_primes)))
     # Uncomment the next line to see all the prime numbers
     #print('Primes found:\n'+str(merged_primes))
+else:
+    print('Node',str(my_rank),'finished.')
