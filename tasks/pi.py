@@ -1,7 +1,6 @@
 import multiprocessing
 import time
 import sys
-from tqdm import tqdm
 
 def calcPi():
     q, r, t, k, n, l = 1, 0, 1, 1, 3, 3
