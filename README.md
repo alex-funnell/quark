@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/fbc9b58b6c994a7b83377d259937e3d3)](https://www.codacy.com/manual/alexfunnell/quark?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alexfunnell/quark&amp;utm_campaign=Badge_Grade)
+
 # Quark
 Quark is the name of this project. It's a cluster computing flow meaning that it describes how to get started and use cluster computing, and explains some of the the concepts behind it.
 
