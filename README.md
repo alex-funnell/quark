@@ -46,8 +46,8 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 
 ## Build and Test
 
-- [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
-- [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
+  - [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
+  - [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
 
 ## Calculating primes in parallel
 
@@ -55,9 +55,9 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 prime.py is a Python task that calculates prime numbers up to a certain endpoint over a single or multiple processors in parallel. This was written as the first milestone test for Quark. It enables me to then move on to researching solutions to the final objective of calculating pi in parallel.
 
 ### Dependencies
-- mpi4py
-- time
-- sys
+  - mpi4py
+  - time
+  - sys
 
 ### How prime.py works
 The following steps show how the method of working the prime numbers out works, not Quark.  
