@@ -4,14 +4,12 @@
 # When I tested it, I got around 38K digits.
 
 # If you change the duration to 10, then you should get around 10K digits.
-# This algorithm gets harder as it continues due to the nature of it. 
+# This algorithm gets harder as it continues due to the nature of it.
 # It has an exponentially increasing difficulty. Read more about it in the README!
 
 
-import multiprocessing
 import time
 import sys
-from tqdm import tqdm
 
 def calcPi():
     q, r, t, k, n, l = 1, 0, 1, 1, 3, 3
