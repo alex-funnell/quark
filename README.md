@@ -48,8 +48,8 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 
 ## Build and Test
 
-  - [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
-  - [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
+- [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
+- [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
 
 ## Calculating primes in parallel
 
@@ -57,24 +57,24 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 prime.py is a Python task that calculates prime numbers up to a certain endpoint over a single or multiple processors in parallel. This was written as the first milestone test for Quark. It enables me to then move on to researching solutions to the final objective of calculating pi in parallel.
 
 ### Dependencies
-  - mpi4py
-  - time
-  - sys
+- mpi4py
+- time
+- sys
 
 ### How prime.py works
 The following steps show how the method of working the prime numbers out works, not Quark.  
 
-1.	task works out its rank in the Quark cluster and works out which part of the range of numbers or candidates it needs to check for prime numbers.
-2.	 for loop goes through range of candidates...
-3.	assumes the candidate is a prime
-4.	goes through previous candidates and see if they divide without remainder, if so break loop
-5.  if we get here, it is a prime number, add to primes array, else go to next candidate
-6.	once complete, send results to the controller
-7.	 if processor is controller, show results
+ 1.	Task works out its rank in the Quark cluster and works out which part of the range of numbers or candidates it needs to check for prime numbers.
+ 2.	For loop goes through range of candidates...
+ 3.	Assumes the candidate is a prime
+ 4.	Goes through previous candidates and see if they divide without remainder, if so break loop
+ 5. If we get here, it is a prime number, add to primes array, else go to next candidate
+ 6.	Once complete, send results to the controller
+ 7.	If processor is controller, show results
 
 ## Calculating Pi in parallel
 
-### Why can't you use parallel computing to calculate pi?
+### Why you can't use parallel computing to calculate pi
 
 Computing all the digits of Pi from 1 to N in an efficient manner is a coarse-grained parallelizable task. At the very top level, it is not parallelizable at all. All the parallelism is at the lower levels. Therefore, communication between all workers is very frequent - enough to become a bottleneck.
 
