@@ -63,12 +63,12 @@ prime.py is a Python task that calculates prime numbers up to a certain endpoint
 The following steps show how the method of working the prime numbers out works, not Quark.  
 
 1.	task works out its rank in the Quark cluster and works out which part of the range of numbers or candidates it needs to check for prime numbers.
-2.	for loop goes through range of candidates...
+2.	 for loop goes through range of candidates...
 3.	assumes the candidate is a prime
 4.	goes through previous candidates and see if they divide without remainder, if so break loop
 5.  if we get here, it is a prime number, add to primes array, else go to next candidate
 6.	once complete, send results to the controller
-7.	if processor is controller, show results
+7.	 if processor is controller, show results
 
 ## Calculating Pi in parallel
 
@@ -81,7 +81,6 @@ There exist algorithms like BBP to directly compute arbitrary binary digits with
 To make things worse, the currently known digit-extraction algorithms for bases other than binary are much slower. And a radix conversion runs into the same all-to-all communication problem as the current methods to compute Pi.
 
 *While there exists some potential ways that can make the algorithm sub-quadratic, they haven't been researched since because they don't solve the problem of the radix conversion.
-
 
 **TL:DR**
 That's not how it works. Computing the digits of Pi is like building a skyscraper. You cannot just assign different floors to different contractors to build at the same time and combine them at the end. You need to finish each floor before you can build the floor above it. The only way to parallelize is to have the different contractors work together within each floor. In other words, the parallelism is horizontal, not vertical.
