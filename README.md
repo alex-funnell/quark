@@ -1,18 +1,18 @@
-# Introduction to Quark
+# Quark
 Quark is the name of this project. It's a cluster computing flow meaning that it describes how to get started and use cluster computing, and explains some of the the concepts behind it.
 
 **Objective:** Use multiple ARM-based computers to calculate pi in parallel to the highest amount of digits in 60 minutes.
 
 Although the main objective is above, Quark also will be here for other students or users to learn and use parallel computing.
 
-# Concepts
+## Concepts
 
-## Introduction to cluster computing
+### Introduction to cluster computing
 Cluster computing is a type of computing in which a group of computers are linked together so that they can act like a single computer. 
 
 In its most basic form, a cluster is a system comprising two or more computers or systems (called nodes) which work together to execute applications or perform other tasks, so that users who use them, have the impression that only a single system responds to them, thus creating an illusion of a single resource (virtual machine). This concept is called transparency of the system. As key features for the construction of these platforms is included elevation : reliability, load balancing and performance.
 
-## How cluster computing works
+### How cluster computing works
 
 There are **two** types of nodes in a cluster. A *controller*, which distributes the tasks and controlls the cluster and *workers*, which do what they say on the tin, carry out the task.
 Controllers are sometimes called master nodes or governing nodes. 
@@ -22,9 +22,9 @@ Tasks are distributed evenly across the nodes so that they can be ran with multi
 
 Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the operating system and use [Python](https://www.python.org) as the high-level language that we will write the tasks in. 
 
-## Visualisation of cluster computing
+### Visualisation of cluster computing
 ![cluster](https://www.buzzle.com/images/diagrams/computer-networks/cluster-computing.jpg)
-## Terms that we'll use and what they mean
+### Terms that we'll use and what they mean
 
 | Term:          | Definition                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,24 +42,24 @@ Our nodes will run [Ubuntu Server](https://ubuntu.com/download/server) as the op
 | Dataset        | A collection of related sets of information that is composed of elements that can be manipulated as a unit by a computer                                                                                                                                                                                                                                                                                                 |
 | Process        | A process is the instance of a computer program that is being executed by one or many threads.                                                                                                                                                                                                                                                                                                                           |
 
-### More information about cluster computing is [available here](docs/cluster-indepth.md)
+**More information about cluster computing is [available here](docs/cluster-indepth.md)**
 
-# Build and Test
+## Build and Test
 
 - [Get started with a Raspberry Pi cluster](docs/rpi4-cluster-tutorial.md)
 - [Get started with a simulated cluster in VirtualBox](docs/simulated-cluster-tutorial.md)
 
-# Calculating primes in parallel
+## Calculating primes in parallel
 
-## Introduction 
+### Introduction 
 prime.py is a Python task that calculates prime numbers up to a certain endpoint over a single or multiple processors in parallel. This was written as the first milestone test for Quark. It enables me to then move on to researching solutions to the final objective of calculating pi in parallel.
 
-## Dependencies
+### Dependencies
 - mpi4py
 - time
 - sys
 
-## How prime.py works
+### How prime.py works
 The following steps show how the method of working the prime numbers out works, not Quark.  
 
 1.	task works out its rank in the Quark cluster and works out which part of the range of numbers or candidates it needs to check for prime numbers.
@@ -70,9 +70,9 @@ The following steps show how the method of working the prime numbers out works, 
 6.	once complete, send results to the controller
 7.	if processor is controller, show results
 
-# Calculating Pi in parallel
+## Calculating Pi in parallel
 
-## Why can't you use parallel computing to calculate pi?
+### Why can't you use parallel computing to calculate pi?
 
 Computing all the digits of Pi from 1 to N in an efficient manner is a coarse-grained parallelizable task. At the very top level, it is not parallelizable at all. All the parallelism is at the lower levels. Therefore, communication between all workers is very frequent - enough to become a bottleneck.
 
